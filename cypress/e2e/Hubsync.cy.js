@@ -1,0 +1,16 @@
+describe("testcases", () => {
+    it("login to the facebook", () => {
+        cy.viewport(1920, 1080)
+        cy.visit("https://qa.hubsyncdev-v2.com/login")
+        cy.viewport("iphone-x")
+        cy.wait(20000)
+        cy.title().should("contain", "HubSync")
+        cy.wait(3000)
+        cy.viewport(1920, 1080)
+        cy.get("#email").type("Rameshr@ideyalabs.com")
+        cy.wait(5000)
+        cy.get("#password").type("Admin@123")
+        cy.wait(6000)
+        cy.get('[type="submit"]').click()
+    })
+})

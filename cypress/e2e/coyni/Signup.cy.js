@@ -1,0 +1,47 @@
+describe('registation for custome portal',function(){
+    it('Create the customer portal',function(){
+        cy.viewport(1920,1080)
+        cy.visit('https://members-qa.coyni.com/login')
+       cy.contains('Sign Up').click()
+      cy.contains('Personal Account').click()
+         })
+    it('enter the user details',function(){
+        cy.viewport(1920,1080)
+        cy.wait(3000)
+    cy.get('#first-name').type('ram')
+     cy.get('#last-name').type('Qa')
+     cy.get('[for=Phone_Number]').type('5416041127')
+     cy.get('[for=email-address]').type('ram@ideyalabs.com')
+     cy.get('[for=create-password]').type('Admin@123')
+     cy.get('[for=confirm-password]').type('Admin@123')
+     cy.wait(3000)
+     cy.get('[type=submit]').click()
+})
+it('entered phone verification',function(){
+    cy.viewport(1920,1080)
+    cy.wait(3000)
+    cy.get('.VerificationInput_verification_input_wrapper__o8Que > .relative > :nth-child(1)').type('1')
+        cy.get('.relative > :nth-child(2)').type('23456')
+})
+it('email verification',function(){
+    cy.viewport(1920,1080)
+    cy.wait(3000)
+    cy.get('.VerificationInput_verification_input_wrapper__o8Que > .relative > :nth-child(1)').type('1')
+        cy.get('.relative > :nth-child(2)').type('23456')
+})
+it('Agreement  Tos view and click that action',function(){
+    cy.viewport(1920,1080)
+    cy.wait(10000)
+    cy.get('.TosAgreements_apiData__U6PSc').scrollTo("bottom", { duration: 16000 })
+    cy.get('[type=checkbox]').click()
+    cy.contains('Next').click()
+})
+    it('Agreement  Privacy policy view and click that action',function(){
+       cy.viewport(1920,1080) 
+       cy.wait(3000)
+       cy.get('.PrivacyAgreements_apiData__ewNFA.relative').scrollTo("bottom", { duration: 16000 })
+       cy.get('[type=checkbox]').click()
+    cy.contains('Next').click()
+})
+
+    })

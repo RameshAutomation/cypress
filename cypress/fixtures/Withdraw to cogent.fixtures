@@ -1,0 +1,199 @@
+Feature: This Feature File includes the following screen: 
+        Withdraw to Cogent
+        
+       1. Add a cogent account     
+       2. Remove the cogent account     
+       3. Withdraw to transaction 
+     
+
+     End to End scenario for Withdraw to Cogent: 
+
+Scenario Outline: Admin able to navigated  the dash board and click on Coyni portal: token account, verify Admin is able to view the Withdraw to cogent text in that respective screen or not ?and verify that admin able to click on withdraw to cogent text , application is naigating to the respective screen screens or not?.
+                 When Admin able to navigated to the dash board , click on Coyni portal : token account side menu 
+                 Then Admin able to view the  Withdraw to cogent text in that respective screen admin click  on it, application is navigating to the respective screen .
+      
+                      ADD NEW COGENT ACCOUNT
+
+Scenario Outline: Admin able to click on withdraw to cogent text , application is navigating to the add No cogent account exist popup  and description should be "You need to add a Cogent account to withdraw funds from your coyni token account. Would you like to add a Cogent Account now?"
+                 When Admin able to click on withdraw to cogent text
+                 Then application is navigated to the No cogent account exist popup and description should be "You need to add a Cogent account to withdraw funds from your coyni token account. Would you like to add a Cogent Account now?".
+
+Scenario Outline: Admin able to click on X mark then verify the behaviour of application .
+                 When admin click on X Mark 
+                 Then  popup should be closed ,application is Redirected to the token account screen    
+
+Scenario Outline: Admin able to click on withdraw to cogent text , application is navigating to the add No cogent account exist popup and admin able to view the add a cogent account text lable and click it , it will be navigating to the respective screen .
+                 When Admin able to click on withdraw to cogent text
+                 Then application is navigated to the No cogent account exist popup and admin able to view the add a cogent lable 
+                 Then admin click on add a cogent account lable,Then verify application is navigated to the Add New Cogent popup.
+
+Scenario Outline: Admin did not enter any text in the  Name on the cogent,Cogent wallet ID,Billing address line 1,city,zipcode,state text fileds ,then verifing the appropriate message and verify save button should not be enabled.
+                 When admin didnot enter any <text> in <field> text field and click outside of the text field      
+                 Then Verifying the error message for the <field> as <error>
+                 And Save button should not be enabled
+Example:             
+Text |Fields                 | Error Messages             |
+     |Name on the cogent     | Name is required           |
+     |Cogent wallet ID       | Wallet ID is required      |
+     |Billing address line 1 |Address Line 1 is required  |
+     |Billing address line 2 | NA(Optional)               |
+     |City                   |City is required            |
+     |Zipcode                |Zip Code is required        |
+     |State                  |State is required           |
+               
+
+Scenario Outline: Admin entered blank spaces for the first stage in Name , Address, city fileds ,then verifing the appropriate message display and verify save button should not be enabled.
+              
+                 When admin entered blank space for the first stage in name on the cogent text field    
+                 Then Verifying the error message for the <field> as <error>
+                 And Save button should not be enabled
+Example:
+Text |Fields                  |Error Messages                                 |
+     |Name on the cogent      |Name cannot contain only blankspaces           |
+     |Billing address line 1  |Address Line 1 cannot contain only blankspaces |
+     |City                    |City cannot contain only blankspaces           |
+                              
+               
+
+
+Scenario Outline: When admin enter less than 5 digits in the zipcode  field, then verifing the appropriate message display and Save button should not be enabled.
+                 
+                 When admin entered lessthan 5 digits in the zipcode filed
+                 Then Verifying the error message for the <field> as <error>
+                 And Save button should not be enabled
+Exapmple:
+
+Text |Fields     |Error Messages             |
+1234 |Zipcode    |Must be minimum 5 numbers  |
+
+
+Scenario Outline: Admin able to  enter all the  mandatory fields and click on (<-) back navigation mark then verify the behaviour of application .
+                 When admin click on (<-) back navigation mark
+                 Then  popup should be closed ,application is Redirected to the No Cogent account  exist screen popup 
+
+Scenario Outline: Again Admin able to click on withdraw to cogent text , application is navigating to the add No cogent account exist popup and admin able to view the add a cogent account text lable and click it , it will be navigating to the respective screen .
+                 When Admin able to click on withdraw to cogent text
+                 Then application is navigated to the No cogent account exist popup and admin able to view the add a cogent lable 
+                 Then admin click on add a cogent lable,Then verify application is navigated to the Add New Cogent popup.
+
+Scenario Outline: Admin able to  enter all the  mandatory fields and click on X mark then verify the behaviour of application .
+                 When admin click on X Mark 
+                 Then  popup should be closed ,application is Redirected to the token account screen                               
+
+Scenario Outline: Admin able to enter all mandatory field with valid data then save button is enabled.
+                 When Admin able to enter all mandatory field
+                 And Save button should  be enabled
+
+Example:
+
+Text         |Fields                  | 
+Ramesh       | Name on the cogent     |
+Dann12987567 | Cogent wallet ID       | 
+Ramesh       |Billing address line 1  |
+optional     |Billing address line 2  | 
+Hyd          |City                    |
+12345        |Zipcode                 |
+alaska       |State                   |
+
+
+Scenario Outline: Admin able to click on save button then verify the behaviour of application .
+
+                 When admin click on save button 
+                 Then application is navigating to the Cogent account added sucessfuly popup screen.
+
+Scenario Outline: Admin able to click on X mark then verify the behaviour of application .
+                 When admin click on X Mark 
+                 Then application is Redirected to the token account screen
+
+Scenario Outline: Admin able to view the  withdraw button and click on it , verify the behaviour of the application
+                 When admin able to view the Withdraw button
+                 Then admin click on the button
+                 And verify the application is navigating to the Withdraw to Cogent Account screen popup.
+
+Scenario Outline: Admin able to enter the withdtaw amount , morethan that of available balance then verify the behaviour of application
+                 When admin entered morethan that of available balance of withdraw amount
+                 Then the application behave like"Insufficient funds
+                 And Verify that Next button is not enabling.
+
+Scenario Outline: Admin able to change the CYN to Dollers then verify the behaviour of application
+                 When admin changing from CYN to Dollers
+                 Then the Symbols of Doller to CYN text is chaning along with same amount 
+
+Scenario Outline: Admin able to enter the lessthan available balance in the withdraw amount filed , then verify the behaviour of application
+                 When admin entered lessthan that of available balance in the Withdraw field 
+                 Then the application is showing the Next Button
+
+Scenario Outline: Admin able to click on Delete Icon then verify the  behaviour of application  
+                 When admin able to click on Delete Icon
+                 Then application is navigating to the Remove Cogent Account popup screen.
+
+Scenario Outline: Admin able to view & click on (<-) back navigation mark then verify the behaviour of application .
+                 When admin click on (<-) back navigation mark
+                 Then  popup should be closed ,application is Redirected to the Withdraw to cogent screen popup                  
+
+Scenario Outline: Admin able to click on X mark then verify the behaviour of application .
+                 When admin click on X Mark 
+                 Then application is Redirected to the token account screen
+
+Scenario Outline: Admin able to view the remove cogent account popup screen verify the desctiption for that popup screen and Remove button should be enabled
+                 When admin able to view the remove cogent popup screen 
+                 Then opup screen description displaying as"Are you sure you want to remove this Cogent account? You cannot make any withdrawals from your coyni token account without a Cogent account."
+                 And verify remove button should be enabled.
+
+Scenario Outline: Admin able to click on remove button then verify the behaviourof the application
+                 When admin able to click on remove button 
+                 Then application is navigated to the cogent account removed sucessfully popup 
+                 And verify that admin able to view the add cogent button.
+
+ Scenario Outline: Admin able to click on X mark then verify the behaviour of application .
+                 When admin click on X Mark 
+                 Then application is Redirected to the token account screen
+=======================================================================================================================================================================================================================================
+                                             Positive Flow Scenarios:
+
+ 
+Scenario Outline: Admin able to navigate dash board and click on token account side menu, verify the behiour of application
+                 When admin able to naviagte the dash board 
+                 then click on Coyni portal : token account side menu
+                 And verify the application showing the text as Withdraw to cogent text in token account  total available balance activity 
+
+Scenario Outline: Admin able to click on Withdraw to cogent text , then verifing the behaviour of application
+                 When admin click on withdarw to cogent text
+                 Then application is naviagte to the Withdraw to cogent popup screen
+
+Scenario Outline: Admin able to enter the withdraw amount in the filed, then verifing the behaviour of application   
+                  When admin entered the withdraw amount  
+                  Then Admin able to enter the desctiption(optional)
+                  And verify that Next button is enabled.
+
+Scenario Outline: Admin able to click on Next button , then verifing the behaviour of application
+                  When admin click on Next button
+                  Then Application is navigating to the Withdarw to cogent popup screen along with transaction related showing
+                  And verify the confirm button should be enabled
+
+Scenario Outline: Admin able to click on confirm button , then verifing the behaviour of application
+                  When admin click on Next button
+                  Then Application is navigating to the Verify Your Identity popup screen 
+                  And verify that admin able to enter the valid verification code.
+
+Scenario Outline: Admin able to enter invalid verification code, then verifing the behaviour of application
+                  When admin able to enter invalid verification code
+                  Then Application verification code boxes showing red color
+                  And verify error message as"Verification Failed" should be shown.
+
+Scenario Outline: Admin able to enter valid verification code, then verifing the behaviour of application
+                  When admin able to enter valid verification code
+                  Then Application is navigate to the Transaction in Progress popup screen
+                  And verify done button should be enabled.
+                                  
+Scenario Outline: Admin able to click on Done button , then verifing the behaviour of application
+                  When admin click on Done button
+                  Then Application is navigating to the coyni portal token account screen
+                  And verify that related withdarw transaction showing in the list.
+
+
+
+
+
+
+
