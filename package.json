@@ -6,7 +6,8 @@
   "scripts": {
     "cypress:runner": "cypress open --e2e --browser chrome --headed",
     "cypress:execution": "cypress run --spec cypress/e2e/features/*",
-    "cypress:execution-tags": "cypress run --browser chrome --headed --env TAGS=\"@sanity or @smoke\" --config video=false --spec cypress/e2e/features/amazon.feature",
+    "cypress:cloud": "cypress run --browser chrome --headed --env TAGS=\"@sanity or @smoke\" --config video=true --record --key 702b2788-3cdb-41c0-9576-ff3648139b3a",
+    "cypress:execution1-tags": "cypress run --browser chrome --headed --env TAGS=\"@sanity or @smoke\" --config video=false --spec cypress/e2e/features/amazon.feature",
     "cypress:execution-allure": "cypress run --browser chrome --env allure=true,tags=@sanity --config video=false",
     "allure:clear": "rm -r allure-results/ allure-report cypress/screenshots || true",
     "allure:report": "allure generate allure-results --clean -o allure-report",

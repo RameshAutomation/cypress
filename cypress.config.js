@@ -18,7 +18,7 @@ module.exports = defineConfig({
 
   // reporter: 'cypress-mochawesome-reporter',
 
-
+  projectId: "8zmr6n",
   chromeWebSecurity: false,
   defaultCommandTimeout: 10000,
   taskTimeout: 80000,
