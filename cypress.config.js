@@ -23,6 +23,8 @@ module.exports = defineConfig({
   defaultCommandTimeout: 10000,
   taskTimeout: 80000,
   pageLoadTimeout: 150000,
+  viewportHeight:1080,
+  viewportWidth:1440,
 
   // reporter: 'cypress-mochawesome-reporter',
   // reporterOptions: {
