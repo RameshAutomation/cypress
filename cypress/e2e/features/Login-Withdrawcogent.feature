@@ -4,7 +4,7 @@ Feature: Login functionality
     This feature file consists of all Testcases related to Login
 
     Background: setupblock
-
+Given User is on Login home page
 
     @valid
     Scenario: Add cogent account/Withdraw to cogent transaction and Delete cogent account
@@ -20,7 +20,7 @@ Feature: Login functionality
 
         When user click on otp boxes and enter otp as "123456"
         Then application navigates to the Dashboard screen
-        
+
         When user click on Token account text under the coyni portal
         Then application is navigating to the token account details
 
