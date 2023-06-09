@@ -1,5 +1,5 @@
 Feature: Login to withdraw cogent functionality
-    This feature file consists of all Testcases related to Withdraw cogent
+    This feature file consists of all Testcases related to Feature controls
 
     Background: setupblock
         Given User is on Login home page
@@ -18,7 +18,7 @@ Feature: Login to withdraw cogent functionality
 
         When user click on otp boxes and enter otp as "123456"
         Then application navigates to the Dashboard screen
-        
+
         @Feature controls
 
         Scenario:Admin able to disabled/enabled all the feature controls
