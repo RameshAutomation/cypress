@@ -1,7 +1,6 @@
 import { Given, When, Then, Before, After } from "@badeball/cypress-cucumber-preprocessor"
 // import { when } from "cypress/types/jquery"
 
-
 Before(() => {
     cy.log("Before Hook....")
 })

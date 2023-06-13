@@ -3,26 +3,22 @@
 Feature: Add/Delete-Transaction-Withdraw to Cogent Functionality
     This feature file consists of all Testcases related to Withdraw cogent
 
-    Background: setupblock
-        Given User is on Login home page
-
     @valid
-    Scenario: User Login sucessfully and navigated to the dash board screen
+    Scenario Outline: User Login sucessfully and navigated to the dash board screen
         It will validate the Login Functionality
+        Given User is on Login home page
         Then Title should contain "coyni"
-
         When user click on email and enter email as "<Email>"
         And user click on password and enter password as "<Password>"
         And user Click on Next button
         Then Application navigates the two step authy screen
-
         When user click on otp boxes and enter otp as "<OTP>"
         Then application navigates to the Dashboard screen
 
-        Example:
-        |Email                | Password | OTP  |
-        |Rameshr@ideyalabs.com|Admin@123 |123456|
-                
+    Example:
+            | Email                 | Password  | OTP    |
+            | Rameshr@ideyalabs.com | Admin@123 | 123456 |
+
 
     Scenario Outline: Sucessfully addede the cogent account
         It will validate the functionality of Add the cogent account
@@ -74,9 +70,9 @@ Feature: Add/Delete-Transaction-Withdraw to Cogent Functionality
         And Click on Remove Button,then Cogent Account Removed Successfully screen should be shown
 
 
-        @Feature controls
+    @Feature controls
 
-        Scenario Outline:Admin able to disabled/enabled all the feature controls
+    Scenario Outline:Admin able to disabled/enabled all the feature controls
         It will be validate the functionality of Enable/disbled controls
 
         When User click on System setting side menu
