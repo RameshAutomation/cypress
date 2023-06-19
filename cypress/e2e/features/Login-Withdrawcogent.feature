@@ -2,26 +2,20 @@
 
 Feature: Add/Delete-Transaction-Withdraw to Cogent Functionality
     This feature file consists of all Testcases related to Withdraw cogent
-
+Given User is on Login home page
     @valid
     Scenario Outline: User Login sucessfully and navigated to the dash board screen
         It will validate the Login Functionality
-        Given User is on Login home page
         Then Title should contain "coyni"
-        When user click on email and enter email as "<Email>"
-        And user click on password and enter password as "<Password>"
+        When user click on email and enter email as "rameshr@ideyalabs.com"
+        And user click on password and enter password as "Admin@123"
         And user Click on Next button
         Then Application navigates the two step authy screen
-        When user click on otp boxes and enter otp as "<OTP>"
+        When user click on otp boxes and enter otp as "123456"
         Then application navigates to the Dashboard screen
 
-    Example:
-            | Email                 | Password  | OTP    |
-            | Rameshr@ideyalabs.com | Admin@123 | 123456 |
-
-
-    Scenario Outline: Sucessfully addede the cogent account
-        It will validate the functionality of Add the cogent account
+    # Scenario Outline: Sucessfully addede the cogent account
+    #     It will validate the functionality of Add the cogent account
 
         When user click on Token account text under the coyni portal
         Then application is navigating to the token account details
@@ -42,8 +36,8 @@ Feature: Add/Delete-Transaction-Withdraw to Cogent Functionality
         And user click on save btn
         Then application is navigates the cogent account added sucessfully popup screen
 
-    Scenario Outline: Sucessfully admin can do the transaction of withdraw to cogent
-        It will validate the functionality of Withdraw to cogent transaction
+    # Scenario Outline: Sucessfully admin can do the transaction of withdraw to cogent
+    #     It will validate the functionality of Withdraw to cogent transaction
 
         When user click on Withdraw Button
         Then Application is navigates the Withdraw to cogent popup screen
@@ -60,8 +54,8 @@ Feature: Add/Delete-Transaction-Withdraw to Cogent Functionality
         Then application is navigating to the Processing to inprogress popup screen
         And user click on Done button then application is directed to the token account list
 
-    Scenario Outline: Sucessfully delete the cogent account
-        It will validate the fumctionality of Delete cogent account
+    # Scenario Outline: Sucessfully delete the cogent account
+    #     It will validate the fumctionality of Delete cogent account
 
         When Admin click on WITHDRAW TO COGENT text
         And Screen is navigating to the Withdraw to Cogent Account popup screen
@@ -72,8 +66,8 @@ Feature: Add/Delete-Transaction-Withdraw to Cogent Functionality
 
     @Feature controls
 
-    Scenario Outline:Admin able to disabled/enabled all the feature controls
-        It will be validate the functionality of Enable/disbled controls
+    # Scenario Outline:Admin able to disabled/enabled all the feature controls
+    #     It will be validate the functionality of Enable/disbled controls
 
         When User click on System setting side menu
         Then in the Dropdown lisr of subfeatures showning
